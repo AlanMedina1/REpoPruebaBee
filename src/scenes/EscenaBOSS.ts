@@ -44,8 +44,8 @@ export default class EscenaBOSS extends Phaser.Scene
     this.load.image('obstaculos', 'assets/images/Gameplay Assets/colliders/tilemap1 prueba.png')
     this.load.image('FlorBoss', 'assets/images/Gameplay Assets/colliders/girasol.png')
 
-    this.load.image('Avispa', '/assets/images/Gameplay Assets/Personajes/BOSS/avispa.png')
-    this.load.image('Pium', '/assets/images/Gameplay Assets/Personajes/BOSS/pium.png')
+    this.load.image('Avispa', 'assets/images/Gameplay Assets/Personajes/BOSS/avispa.png')
+    this.load.image('Pium', 'assets/images/Gameplay Assets/Personajes/BOSS/pium.png')
 
     //preload de el fondo del tile 
     this.load.image('FondoNiv', 'assets/images/Menu/fondo attarrdecer.png')
@@ -53,8 +53,8 @@ export default class EscenaBOSS extends Phaser.Scene
 
     //preloads musica
     this.load.audio('MusicaBOSS', 'assets/sounds/MUSICA/Musica_Nivel_02_Boss.mp3')
-    this.load.audio('healthfx', '/assets/sounds/MUSICA/SFX/Powerup.mp3')
-    this.load.audio('pesticidafx', '/assets/sounds/MUSICA/SFX/Pesticida.mp3')
+    this.load.audio('healthfx', 'assets/sounds/MUSICA/SFX/Powerup.mp3')
+    this.load.audio('pesticidafx', 'assets/sounds/MUSICA/SFX/Pesticida.mp3')
 
     //Preload Tilemaps
     
