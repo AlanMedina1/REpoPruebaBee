@@ -13,9 +13,9 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AlanMedina1/REpoPruebaBee"
+		"url": "https://github.com/AlanMedina1/Repo-De-Flor-en-Flor"
 	},
-	"homepage": "https://alanmedina1.github.io/REpoPruebaBee/",
+	"homepage": "https://alanmedina1.github.io/Repo-De-Flor-en-Flor/",
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^2.29.0",
 		"@typescript-eslint/parser": "^2.29.0",
