@@ -175,7 +175,7 @@ this.MusicaRepro.stop()
 SonidoHearthON()
 {
  if (!this.MutearSonido) {
-    this.sonidocorazon = this.sound.add('healthfx', {volume:0.1, loop:false})
+    this.sonidocorazon = this.sound.add('vidita', {volume:0.1, loop:false})
     this.sonidocorazon.play()
 }
 }

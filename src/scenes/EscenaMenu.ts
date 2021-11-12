@@ -33,7 +33,7 @@ export default class EscenaMenu extends Phaser.Scene{
         this.load.audio('clic', 'assets/sounds/MUSICA/SFX/Blip_Select.mp3')
         this.load.audio('choquecoll', 'assets/sounds/MUSICA/SFX/collider.mp3')
 
-        this.load.audio('healthfx', 'assets/sounds/MUSICA/SFX/Powerup.mp3')
+        this.load.audio('vidita', 'assets/sounds/MUSICA/SFX/Powerup.mp3')
         this.load.audio('pesticidafx', 'assets/sounds/MUSICA/SFX/Pesticida.mp3')
     }
 
