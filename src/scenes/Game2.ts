@@ -50,8 +50,6 @@ this.load.image('FondoSig2', 'assets/images/Menu/fondo ciudad.png')
     
 this.load.tilemapTiledJSON('BeeGame2', 'assets/Niv2/BeeGameTry.json')
 
-this.load.audio('healthfx', '/assets/sounds/MUSICA/SFX/Powerup.mp3')
-    this.load.audio('pesticidafx', '/assets/sounds/MUSICA/SFX/Pesticida.mp3')
 }
 
 create () 

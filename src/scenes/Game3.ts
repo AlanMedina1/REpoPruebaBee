@@ -52,8 +52,7 @@ export default class Game3 extends Phaser.Scene
 
     this.load.image('Poison', 'assets/images/Gameplay Assets/power up/pesticida.png')
 
-    this.load.audio('healthfx', '/assets/sounds/MUSICA/SFX/Powerup.mp3')
-    this.load.audio('pesticidafx', '/assets/sounds/MUSICA/SFX/Pesticida.mp3')
+
     }
 
     
