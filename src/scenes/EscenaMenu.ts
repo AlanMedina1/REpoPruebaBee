@@ -1,4 +1,7 @@
+import { Events } from 'matter';
 import Phaser from 'phaser'
+import {sharedInstance as Events2} from './EventCenter'
+
 export default class EscenaMenu extends Phaser.Scene{
 
     sound: any;
@@ -20,7 +23,7 @@ export default class EscenaMenu extends Phaser.Scene{
         //this.load.image('options', 'assets/images/Menu/ajuste.png')
 
         //Preloads de los colliders
-        this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida corto.png')
+        this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/plataforma_abejita.png')
         this.load.image('pestilargo', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida.png')
         this.load.image('pestimedio', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida medio.png')
         this.load.image('matamosca', 'assets/images/Gameplay Assets/colliders/matamoscas grande.png')
@@ -38,7 +41,10 @@ export default class EscenaMenu extends Phaser.Scene{
     }
 
     create() {
-
+        Events2.emit('Noquieroverelmenu')
+        Events2.emit('Quieroverelmusica')
+        Events2.emit('Quieroverelmenusonido')
+        
         this.add.video(800, 950, 'Unraf');
 
         this.sound = this.scene.get("SonidosGeneral");
@@ -46,7 +52,8 @@ export default class EscenaMenu extends Phaser.Scene{
 
         this.add.image(800, 450, 'menufondo'); 
   
-        this.add.image(800, 350, 'titulo'); 
+        this.add.image(800, 250, 'titulo')
+        .setScale(1.40)
   
         /*var start = this.add.image(1000, 550, 'options')
         start.setInteractive()
@@ -54,11 +61,13 @@ export default class EscenaMenu extends Phaser.Scene{
   
         var creds = this.add.image(790, 700, 'creds')
         creds.setInteractive()
+        .setScale(1)
         creds.on('pointerdown', () => {this.scene.start('creditos') 
         this.sound.SonidoClick()});
   
         var help = this.add.image(800, 570, 'play')
         help.setInteractive()
+        .setScale(1)
         //CAMBIAR A GAME NORMAL
         help.on('pointerdown', () => {this.scene.start('menu')
         this.sound.SonidoClick()});

@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-
+import {sharedInstance as Events} from './EventCenter'
 
 export default class UNRaf extends Phaser.Scene{
     constructor () {
@@ -13,8 +13,17 @@ export default class UNRaf extends Phaser.Scene{
 
     }
 
+    init()
+    {
+       
+    }
+
     create ()
     {
+
+        Events.emit('Noquieroverelmenu')
+        Events.emit('Noquieroverelmusica')
+        Events.emit('Noquieroverelmenusonido')
 
         var vid = this.add.video(800, 450, 'Unraf');{
             vid.play(true);
@@ -39,4 +48,5 @@ export default class UNRaf extends Phaser.Scene{
             return error;
         });
     }
+
 }

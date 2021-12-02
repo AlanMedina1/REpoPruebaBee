@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import ObstaclesController from './ObstaclesController'
 import PlayerController from './PlayerController'
 import sonidogeneral from './MusicManager'
+import {sharedInstance as Events} from './EventCenter'
 
 export default class Game extends Phaser.Scene
 {
@@ -41,7 +42,7 @@ export default class Game extends Phaser.Scene
     this.load.image('health', 'assets/images/Gameplay Assets/power up/PU vida1.png')
     this.load.image('healthempty', 'assets/images/Gameplay Assets/power up/PU vidasin22.png')
     //Preloads de los colliders
-    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida corto.png')
+    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/plataforma_abejita.png')
     //Obstaculos
     this.load.image('obstaculos', 'assets/images/Gameplay Assets/colliders/tilemap1 prueba.png')
     this.load.image('Flor', 'assets/images/Gameplay Assets/colliders/FlorNiv1.png')
@@ -57,7 +58,7 @@ export default class Game extends Phaser.Scene
 
  create()
  {
-    
+    Events.emit('Quieroverelmenu')
     this.scene.launch('ui')
     this.sound = this.scene.get("SonidosGeneral");
     this.sound.Sonido('MusicaNiv1')
@@ -68,7 +69,7 @@ export default class Game extends Phaser.Scene
 
     //Tilemaps
     const map = this.make.tilemap({ key: 'BeeGame1' });
-    this.cameras.main.setBounds(0, 0, 1920, 885)
+    this.cameras.main.setBounds(0, 0, 3520, 885)
     //Conjunto de Patrones/Aka Tileset
 
     const tileset1 = map.addTilesetImage('Fondo', 'fondolevel'); //Primero el nombre del conjunto y luego como se definio en Visual

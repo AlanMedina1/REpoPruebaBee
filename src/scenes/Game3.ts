@@ -40,7 +40,7 @@ export default class Game3 extends Phaser.Scene
     this.load.image('health', 'assets/images/Gameplay Assets/power up/PU vida1.png')
     this.load.image('healthempty', 'assets/images/Gameplay Assets/power up/PU vidasin22.png')
     //Preloads de los colliders
-    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida corto.png')
+    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/plataforma_abejita.png')
     //Obstaculos
     this.load.image('obstaculos3', 'assets/images/Gameplay Assets/colliders/CollNiv3.png')
     this.load.image('Flor3', 'assets/images/Gameplay Assets/colliders/FlorNiv3.png')

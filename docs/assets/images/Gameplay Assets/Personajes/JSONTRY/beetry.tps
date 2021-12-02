@@ -177,7 +177,7 @@
             <key>defaultPivotPoint</key>
             <point_f>0.5,0.5</point_f>
             <key>writePivotPoints</key>
-            <false/>
+            <true/>
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
@@ -185,8 +185,8 @@
             <key type="filename">BEE1.png</key>
             <key type="filename">BEE2.png</key>
             <key type="filename">BEE3.png</key>
-            <key type="filename">BEE4.png</key>
             <key type="filename">BEE5.png</key>
+            <key type="filename">BEE6.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -205,11 +205,11 @@
         <key>fileList</key>
         <array>
             <filename>BEE0.png</filename>
-            <filename>BEE1.png</filename>
             <filename>BEE2.png</filename>
+            <filename>BEE1.png</filename>
             <filename>BEE3.png</filename>
-            <filename>BEE4.png</filename>
             <filename>BEE5.png</filename>
+            <filename>BEE6.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

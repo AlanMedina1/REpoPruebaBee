@@ -77,7 +77,7 @@ export default class EscenaBOSS extends Phaser.Scene
     ui.Escenanombre(this.scene.key)
 
     const map = this.make.tilemap({ key: 'BossLevel' });
-    this.cameras.main.setBounds(0, 0, 4800, 896)
+    this.cameras.main.setBounds(0, 0, 6400, 896)
     //Conjunto de Patrones/Aka Tileset
 
     const tileset1 = map.addTilesetImage('Fondo', 'FondoNiv'); //Primero el nombre del conjunto y luego como se definio en Visual

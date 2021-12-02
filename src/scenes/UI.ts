@@ -3,6 +3,7 @@ import { sharedInstance as events } from './EventCenter'
 
 export default class UI extends Phaser.Scene
 {
+
 	sound:any
 	private graphics!: Phaser.GameObjects.Graphics
 
@@ -70,6 +71,7 @@ export default class UI extends Phaser.Scene
 
 	Escenanombre(nombre){
 		this.Escena = nombre;
+		
 	}
 
 }

@@ -17,7 +17,7 @@
          "objects":[
                 {
                  "gid":1,
-                 "height":73.7094232587457,
+                 "height":60.3760899254124,
                  "id":1,
                  "name":"MusicaHUD",
                  "properties":[
@@ -25,17 +25,22 @@
                          "name":"accion",
                          "type":"string",
                          "value":"silenciar"
+                        }, 
+                        {
+                         "name":"show",
+                         "type":"bool",
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":83.9962180901355,
-                 "x":1408.4399621809,
-                 "y":80.5735896627797
+                 "width":70.6628847568022,
+                 "x":1450.06198130056,
+                 "y":67.1452883706271
                 }, 
                 {
                  "gid":3,
-                 "height":71.1377245508983,
+                 "height":63.1377245508983,
                  "id":3,
                  "name":"SonidoHUD",
                  "properties":[
@@ -43,25 +48,36 @@
                          "name":"accion",
                          "type":"string",
                          "value":"mutear"
+                        }, 
+                        {
+                         "name":"show",
+                         "type":"bool",
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":81.4245193822885,
-                 "x":1303.00031515916,
-                 "y":75.4301922470848
+                 "width":62.7578527156218,
+                 "x":1372.14749448472,
+                 "y":68.5735896627797
                 }, 
                 {
                  "gid":5,
-                 "height":81.7113142136779,
-                 "id":6,
+                 "height":64.6666666666667,
+                 "id":7,
                  "name":"PausaHUD",
+                 "properties":[
+                        {
+                         "name":"show",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":79.5698077529153,
-                 "x":1511.44941695556,
-                 "y":85.8603844941696
+                 "width":72.3333333333333,
+                 "x":1530.33333333333,
+                 "y":68.3333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -70,7 +86,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":7,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.0",
@@ -79,7 +95,7 @@
         {
          "columns":2,
          "firstgid":1,
-         "image":"musicasprite.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/phaser3-typescript-parcel-template\/public\/assets\/Config HUD\/musicasprite.png",
          "imageheight":120,
          "imagewidth":240,
          "margin":0,
@@ -92,7 +108,7 @@
         {
          "columns":2,
          "firstgid":3,
-         "image":"sonidosprite.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/phaser3-typescript-parcel-template\/public\/assets\/Config HUD\/sonidosprite.png",
          "imageheight":120,
          "imagewidth":240,
          "margin":0,
@@ -105,7 +121,7 @@
         {
          "columns":2,
          "firstgid":5,
-         "image":"pausasprite.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/..\/phaser3-typescript-parcel-template\/public\/assets\/Config HUD\/pausasprite.png",
          "imageheight":110,
          "imagewidth":190,
          "margin":0,

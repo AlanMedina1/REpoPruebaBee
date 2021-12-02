@@ -39,7 +39,7 @@ this.load.atlas('BEE', 'assets/images/Gameplay Assets/Personajes/JSONTRY/BEE.png
 this.load.image('health', 'assets/images/Gameplay Assets/power up/PU vida1.png')
 this.load.image('healthempty', 'assets/images/Gameplay Assets/power up/PU vidasin22.png')
 //Preloads de los colliders
-this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida corto.png')
+this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/plataforma_abejita.png')
 //Obstaculos
 this.load.image('obstaculos2', 'assets/images/Gameplay Assets/colliders/CollidersLV2.png')
 this.load.image('Flor2', 'assets/images/Gameplay Assets/colliders/FlorNiv2.png')

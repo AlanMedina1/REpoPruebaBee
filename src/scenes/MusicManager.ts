@@ -1,4 +1,7 @@
+//import { Events } from 'matter'
 import Phaser from 'phaser'
+import {sharedInstance as Events} from './EventCenter'
+
 export default class sonidogeneral extends Phaser.Scene
 
 {
@@ -20,6 +23,7 @@ export default class sonidogeneral extends Phaser.Scene
     private EscenaJuego;
     private Resumir = false
 
+
 constructor()
 {
 super({key: 'SonidosGeneral', active: true})
@@ -36,6 +40,22 @@ preload ()
 }
 create ()
 {   
+    Events.on('Noquieroverelmenu', this.NoquieroPausa, this)
+
+    Events.on('Quieroverelmenu', this.QuieroPausa, this)
+
+    //evento musica
+    Events.on('Noquieroverelmusica', this.NoquieroMusica, this)
+
+    Events.on('Quieroverelmusica', this.QuieroMusica, this)
+
+    //evento sonido
+
+    Events.on('Noquieroverelmenusonido', this.NoquieroSonido, this)
+
+    Events.on('Quieroverelmenusonido', this.QuieroSonido, this)
+
+
     const map = this.make.tilemap({ key: 'MusicaHUD' });
     const objectsLayer = map.getObjectLayer('interactivos')
      objectsLayer.objects.forEach(objData => {
@@ -47,8 +67,8 @@ create ()
                     {
                         this.Imagensonido = (this.add.image(x, y, 'SonidoSprite')) 
                              .setFrame(0)
-                             this.Imagensonido.setDisplaySize(width, height)
-
+                            this.Imagensonido.setDisplaySize(width, height)
+                            this.Imagensonido.setDataEnabled()
                              break
                              
                     }
@@ -56,8 +76,8 @@ create ()
                     {
                         this.Imagenmusica = (this.add.image(x, y, 'MusicaSprite')) 
                              .setFrame(0)
-                             this.Imagenmusica.setDisplaySize(width, height)
-
+                            this.Imagenmusica.setDisplaySize(width, height)
+                            this.Imagenmusica.setDataEnabled()
                              break
                              
                     }
@@ -68,6 +88,7 @@ create ()
                         .setFrame(0)
                     this.ImagenPausa.setDisplaySize(width, height)
                     this.ImagenPausa.setVisible(true)
+                    this.ImagenPausa.setDataEnabled()
                     break
                 }
                 }            
@@ -102,14 +123,47 @@ create ()
          if (this.ImagenPausa.frame.name == 0) {
              this.ImagenPausa.setFrame(1)  
              this.PausaPhysics = (true)
+             //this.ImagenPausa.setVisible(true)
          }
          else {
              this.ImagenPausa.setFrame(0)
              this.PausaPhysics = (false)
-             //this.ImagenPausa.setVisible(true)
+             //this.ImagenPausa.setVisible(false)
          }
      })
    
+}
+
+NoquieroPausa(this)
+{
+    this.ImagenPausa.data.set('show', false)
+
+}
+
+QuieroPausa(this)
+{
+    this.ImagenPausa.data.set('show', true)
+
+}
+
+QuieroSonido(this)
+{
+    this.Imagensonido.data.set('show', true)
+}
+
+QuieroMusica(this)
+{
+    this.Imagenmusica.data.set('show', true)
+}
+
+NoquieroSonido(this)
+{
+    this.Imagensonido.data.set('show', false)
+}
+
+NoquieroMusica(this)
+{
+    this.Imagenmusica.data.set('show', false)
 }
 
 PausaJuego(Escena)
@@ -222,6 +276,33 @@ update(){
              this.Resumir = true
              this.EscenaJuego.scene.resume()
         }
+     }
+     //Pausa
+     if (this.ImagenPausa.data.values.show == false)
+     {
+         this.ImagenPausa.setVisible(false)
+     }
+     else
+     {
+        this.ImagenPausa.setVisible(true)
+     }
+     //Sonido
+     if (this.Imagensonido.data.values.show == false)
+     {
+         this.Imagensonido.setVisible(false)
+     }
+     else
+     {
+        this.Imagensonido.setVisible(true)
+     }
+     //musica
+     if (this.Imagenmusica.data.values.show == false)
+     {
+         this.Imagenmusica.setVisible(false)
+     }
+     else
+     {
+        this.Imagenmusica.setVisible(true)
      }
 }
 

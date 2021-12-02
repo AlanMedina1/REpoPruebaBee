@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-
+//import pausageneral from './scenes/PauseManager'
 import UNRaf from './scenes/UNRaf'
 import EscenaMenu from './scenes/EscenaMenu'
 import Escena3 from './scenes/Escena3'
@@ -17,6 +17,8 @@ import EscenaDYKBoss from './scenes/EscenaDYKlvlBoss'
 import EscenaWin from './scenes/EscenaWin'
 import EscenaDYK2 from './scenes/EscenaDYKlvl2'
 import 'regenerator-runtime/runtime'
+
+
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
     scale:{

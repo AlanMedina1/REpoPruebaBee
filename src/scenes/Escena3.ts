@@ -22,13 +22,14 @@ export default class Escena3 extends Phaser.Scene
     
         this.add.image(800, 450, 'fondo'); 
     
-        this.add.image(800, 500, 'nombres'); 
+        this.add.image(800, 450, 'nombres')
+        .setScale(1)
     
        const { width, height } = this.scale
 
        this.add.text(width * 0.5, height * 0.1, getPhrase('CRÉDITOS'), {
            fontFamily: 'Pixel',
-           fontSize: '52px',
+           fontSize: '80px',
            color: '#FFFB00'
        })
        .setOrigin(0.5)

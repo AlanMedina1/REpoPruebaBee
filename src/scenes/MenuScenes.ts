@@ -77,6 +77,12 @@ export default class MenuScene extends Phaser.Scene{
 				this.scene.start('dyk')
 			})
 
+            var help = this.add.image(width * 0.35, height * 0.75,'casaico')
+            help.setInteractive()
+            help.on('pointerdown', () => {this.scene.start('inicio') 
+            let sound: any = this.scene.get('SonidosGeneral')
+            sound.SonidoStop();
+            })
 //Segunda parte
         
             this.updatedTextInScene = this.add.text(buttonUpdate.x,buttonUpdate.y, getPhrase(this.updatedString), {

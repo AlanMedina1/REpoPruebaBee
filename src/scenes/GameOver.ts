@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import sonidogeneral from './MusicManager'
 import { getPhrase } from '~/services/translations'
+import {sharedInstance as Events} from './EventCenter'
 
 export default class GameOver extends Phaser.Scene
 {
@@ -14,7 +15,6 @@ export default class GameOver extends Phaser.Scene
 	preload()
 	{
 		this.load.image('fondoGO',  'assets/images/Menu/gameover1.png')
-		this.load.image('play', 'assets/images/Menu/play ico.png')
         this.load.image('reintentar', 'assets/images/Menu/reintentar grande.png')
 		this.load.image('casaico', 'assets/images/Menu/casa ico grande.png')
 		
@@ -22,6 +22,7 @@ export default class GameOver extends Phaser.Scene
 
 	create()
 	{
+		Events.emit('Noquieroverelmenu')
 		this.sound = this.scene.get("SonidosGeneral");
     	this.sound.Sonido('MusicaLose')
 
@@ -39,13 +40,9 @@ export default class GameOver extends Phaser.Scene
 		let ui:any = this.scene.get("ui");
 
 
-		var help = this.add.image(1000, 550, 'play')
-        help.setInteractive()
-        help.on('pointerdown', () => this.scene.start('game') );
-
 		var help = this.add.image(800, 570, 'reintentar')
         help.setInteractive()
-        help.on('pointerdown', () => this.scene.start(ui.Escena) );
+        help.on('pointerdown', () => {Events.emit('Quieroverelmenu') ,this.scene.start(ui.Escena)} );
 
 		var help = this.add.image(600, 550, 'casaico')
         help.setInteractive()

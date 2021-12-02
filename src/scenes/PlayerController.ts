@@ -20,6 +20,7 @@ export default class PlayerController
 
 	private health = 3
 
+	private abejaclick = false 
 
     constructor(scene: Phaser.Scene, sprite: Phaser.Physics.Matter.Sprite, cursors: CursorKeys, obstacles: ObstaclesController)
 	{
@@ -28,19 +29,17 @@ export default class PlayerController
 		this.cursors = cursors
 		this.obstacles = obstacles
 		this.pointer = scene.input.activePointer;
-
+		this.scene.time.delayedCall(125, ()=> this.abejaclick = true)
 		this.createAnimations()
 
 		this.stateMachine = new StateMachine(this, 'player')
 
         this.stateMachine.addState('idle', {
-			onEnter: this.idleOnEnter,
 			onUpdate: this.idleOnUpdate
 		})
 		.addState('walk', {
 			onEnter: this.walkOnEnter,
 			onUpdate: this.walkOnUpdate,
-			//onExit: this.walkOnExit
 		})
 		.addState('Choquehit', {
         	onEnter: this.ChoqueCollOnEnter		
@@ -70,7 +69,6 @@ export default class PlayerController
 		})
 		.addState('PiumHit', {
 			onEnter: this.picaduraAvispaEnter,
-			//onUpdate: this.picaduraAvispaUpdate
 		})
         .setState('idle')
 
@@ -197,16 +195,12 @@ export default class PlayerController
 		
 	}
 
-    private idleOnEnter()
-	{
-		this.sprite.play('player-idle')
-	}
-
     private idleOnUpdate()
     {
 		 const speed = 7
-		if (this.pointer.isDown)
+		if (this.pointer.isDown && this.abejaclick == true)
 		{
+
 			this.sprite.setVelocityX(speed)
 			this.stateMachine.setState('jump')
 		}
@@ -221,30 +215,8 @@ export default class PlayerController
 	{
 		const speed = 7
 
-		if (this.cursors.left.isDown)
-		{
-			this.sprite.flipX = true
-			this.sprite.setVelocityX(-speed)
-		}
-		else if (this.cursors.right.isDown)
-		{
-			this.sprite.flipX = false
-			this.sprite.setVelocityX(speed)
-		}
-		else
-		{
-			this.sprite.setVelocityX(0)
-			this.stateMachine.setState('idle')
-		}
-
-		
-		if (this.pointer.isDown)
-		{
-			this.stateMachine.setState('jump')
-		}
 	}
 
-	//jumpOnEnter para saltar sin tocar plataforma
 
  private jumpOnEnter()
 	{
@@ -256,7 +228,7 @@ export default class PlayerController
 	{
 		const speed = 7
 
-        if (this.pointer.isDown)
+        if (this.pointer.isDown && this.abejaclick == true)
 		{
 			this.sprite.setVelocityX(speed)
 			this.stateMachine.setState('jump')
@@ -323,7 +295,6 @@ export default class PlayerController
 
 		this.scene.time.delayedCall(100, () => {
 			let sound: any = this.scene.scene.get('SonidosGeneral')
-			//sound.SonidoStop()
 			this.scene.scene.start('dyklv2')
 		})
 
@@ -340,7 +311,6 @@ export default class PlayerController
 
 		this.scene.time.delayedCall(100, () => {
 			let sound: any = this.scene.scene.get('SonidosGeneral')
-			//sound.SonidoStop()
 			this.scene.scene.start('dyklv3')
 		})
 
@@ -388,31 +358,12 @@ export default class PlayerController
 			let sound: any = this.scene.scene.get('SonidosGeneral')
 			sound.SonidoCollider()
 			this.setHealth(this.health - 1)
-			//acá va una variable distinta de pium en el let pero no sé
 			
 		}
 	
 
  	private createAnimations()
 	{
-        this.sprite.anims.create({
-			key: 'player-idle',
-			frames: [{ key: 'BEE', frame: 'BEE1.png' }]
-		})
-
-
-        this.sprite.anims.create({
-			key: 'player-walk',
-			frameRate: 10,
-			frames: this.sprite.anims.generateFrameNames('BEE', {
-				start: 0,
-				end: 3,
-				prefix: 'BEE',
-				suffix: '.png'
-			}),
-			repeat: -1
-		})
-
         this.sprite.anims.create({
 			key: 'jump',
 			frameRate: 10,
@@ -422,15 +373,15 @@ export default class PlayerController
                 prefix: 'BEE',
                 suffix: '.png'
             }),
-            repeat: -1
+            //repeat: -1
         })
 		
         //CONFIGURAR UN SPRITE DE ABEJITA X.X
         this.sprite.anims.create({
 			key: 'player-death',
 			frames: this.sprite.anims.generateFrameNames('BEE', {
-				start: 4,
-				end: 5,
+				start: 5,
+				end: 6,
 				prefix: 'BEE',
 				suffix: '.png'
 			}),

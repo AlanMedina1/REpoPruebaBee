@@ -20,6 +20,7 @@ export async function getTranslations(lang = language) {
     return await fetch(`https://traduci-la.herokuapp.com/rest/translation?project_id=${PROJECT_ID}&lang=${lang}`)
     .then(response => response.json())
     .then(data => {
+        translations = null
         localStorage.setItem('translations', adaptTranslations(data));
     });
 }
