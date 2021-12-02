@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import ObstaclesController from './ObstaclesController'
 import PlayerController from './PlayerController'
 import sonidogeneral from './MusicManager'
-
+import {sharedInstance as Events} from './EventCenter'
 
 export default class Game2 extends Phaser.Scene
 {
@@ -54,6 +54,7 @@ this.load.tilemapTiledJSON('BeeGame2', 'assets/Niv2/BeeGameTry.json')
 
 create () 
 {
+    Events.on('salir', ()=> this.scene.start('inicio'), this)
     this.scene.launch('ui')
     this.sound = this.scene.get("SonidosGeneral");
     this.sound.Sonido('MusicaNiv2')

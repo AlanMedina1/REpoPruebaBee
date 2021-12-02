@@ -1,5 +1,4 @@
 import Phaser from 'phaser'
-//import pausageneral from './scenes/PauseManager'
 import UNRaf from './scenes/UNRaf'
 import EscenaMenu from './scenes/EscenaMenu'
 import Escena3 from './scenes/Escena3'

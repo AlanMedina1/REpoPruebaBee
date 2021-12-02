@@ -22,6 +22,7 @@ export default class GameOver extends Phaser.Scene
 
 	create()
 	{
+		Events.emit('NoquieroMenu')
 		Events.emit('Noquieroverelmenu')
 		this.sound = this.scene.get("SonidosGeneral");
     	this.sound.Sonido('MusicaLose')

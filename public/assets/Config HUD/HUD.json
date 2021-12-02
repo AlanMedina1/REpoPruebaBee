@@ -78,6 +78,24 @@
                  "width":72.3333333333333,
                  "x":1530.33333333333,
                  "y":68.3333333333333
+                }, 
+                {
+                 "gid":7,
+                 "height":77.3333333333333,
+                 "id":9,
+                 "name":"MENUHUD",
+                 "properties":[
+                        {
+                         "name":"show",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":81.3333333333333,
+                 "x":1298.66666666667,
+                 "y":72
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -86,7 +104,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":8,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.0",
@@ -130,6 +148,19 @@
          "tilecount":2,
          "tileheight":110,
          "tilewidth":95
+        }, 
+        {
+         "columns":2,
+         "firstgid":7,
+         "image":"MenuHud.png",
+         "imageheight":120,
+         "imagewidth":240,
+         "margin":0,
+         "name":"MenuHud",
+         "spacing":0,
+         "tilecount":2,
+         "tileheight":120,
+         "tilewidth":120
         }],
  "tilewidth":32,
  "type":"map",

@@ -22,7 +22,7 @@ export default class sonidogeneral extends Phaser.Scene
     private PausaPhysics = false;
     private EscenaJuego;
     private Resumir = false
-
+    private ImagenMenu;
 
 constructor()
 {
@@ -37,9 +37,16 @@ preload ()
     this.load.spritesheet('SonidoSprite', 'assets/Config HUD/sonidosprite.png', {frameWidth: 120, frameHeight: 120})
     this.load.spritesheet('MusicaSprite', 'assets/Config HUD/musicasprite.png', {frameWidth: 120, frameHeight: 120})
     this.load.spritesheet('PausaSprite', 'assets/Config HUD/pausasprite.png', {frameWidth: 95, frameHeight: 110})
+    this.load.spritesheet('MenuSprite', 'assets/Config HUD/MenuHud.png', {frameWidth: 120, frameHeight: 120})
 }
 create ()
 {   
+    //Menu
+    Events.on('NoquieroMenu', this.NoquieroMenu, this)
+
+    Events.on('QuieroMenu', this.QuieroMenu, this)
+
+    //Pausa
     Events.on('Noquieroverelmenu', this.NoquieroPausa, this)
 
     Events.on('Quieroverelmenu', this.QuieroPausa, this)
@@ -91,6 +98,15 @@ create ()
                     this.ImagenPausa.setDataEnabled()
                     break
                 }
+                case 'MENUHUD':
+                    {
+                        this.ImagenMenu = (this.add.image(x, y, 'MenuSprite'))
+                        .setFrame(0)
+                        this.ImagenMenu.setDisplaySize(width, height)
+                        this.ImagenMenu.setVisible(true)
+                        this.ImagenMenu.setDataEnabled()
+                        break
+                    }
                 }            
     })
     
@@ -123,15 +139,35 @@ create ()
          if (this.ImagenPausa.frame.name == 0) {
              this.ImagenPausa.setFrame(1)  
              this.PausaPhysics = (true)
-             //this.ImagenPausa.setVisible(true)
          }
          else {
              this.ImagenPausa.setFrame(0)
              this.PausaPhysics = (false)
-             //this.ImagenPausa.setVisible(false)
          }
      })
-   
+
+     this.ImagenMenu.setInteractive()
+     .on('pointerdown', () =>{
+         if (this.ImagenMenu.frame.name == 0) {
+             this.ImagenMenu.setFrame(1)
+         }
+         
+         else {
+                 this.ImagenMenu.setFrame(0)
+         }
+
+         Events.emit('salir')
+      })
+}
+
+NoquieroMenu(this)
+{
+    this.ImagenMenu.data.set('show', false)
+}
+
+QuieroMenu(this)
+{
+    this.ImagenMenu.data.set('show', true)
 }
 
 NoquieroPausa(this)
@@ -303,6 +339,16 @@ update(){
      else
      {
         this.Imagenmusica.setVisible(true)
+     }
+
+     //menu
+     if (this.ImagenMenu.data.values.show == false)
+     {
+         this.ImagenMenu.setVisible(false)
+     }
+     else
+     {
+        this.ImagenMenu.setVisible(true)
      }
 }
 

@@ -41,10 +41,11 @@ export default class EscenaMenu extends Phaser.Scene{
     }
 
     create() {
+        Events2.emit('NoquieroMenu')
         Events2.emit('Noquieroverelmenu')
         Events2.emit('Quieroverelmusica')
         Events2.emit('Quieroverelmenusonido')
-        
+
         this.add.video(800, 950, 'Unraf');
 
         this.sound = this.scene.get("SonidosGeneral");

@@ -58,6 +58,8 @@ export default class Game extends Phaser.Scene
 
  create()
  {
+    Events.on('salir', ()=> this.scene.start('inicio'), this)
+    Events.emit('QuieroMenu')
     Events.emit('Quieroverelmenu')
     this.scene.launch('ui')
     this.sound = this.scene.get("SonidosGeneral");
@@ -66,6 +68,8 @@ export default class Game extends Phaser.Scene
 
     let ui:any = this.scene.get("ui");
     ui.Escenanombre(this.scene.key)
+
+    
 
     //Tilemaps
     const map = this.make.tilemap({ key: 'BeeGame1' });
@@ -89,7 +93,19 @@ export default class Game extends Phaser.Scene
         map.createLayer('Obstaculos', tileset2)
         map.createLayer('Superado', tileset4)
 
+        // var help = this.add.image(1300, 65, 'casaico')
+        // help.setInteractive()
+        // .setScale(0.75)
+        // help.scrollFactorY = 0;
+        // help.scrollFactorX = 0;
+        // help.on('pointerdown', () => {
+        //     this.scene.start('inicio') 
+		// let sound: any = this.scene.get('SonidosGeneral')
+		// sound.SonidoStop();
+		// })
+
 		const objectsLayer = map.getObjectLayer('objects')
+
 
 		 objectsLayer.objects.forEach(objData => {
 			const { x = 0, y = 0, name, width = 0, height = 0 } = objData
@@ -158,6 +174,7 @@ export default class Game extends Phaser.Scene
         this.matter.world.convertTilemapLayer(layercollidersuelo)
     }
 
+    
 //consejos 
     destroy()
 	{
@@ -169,7 +186,7 @@ export default class Game extends Phaser.Scene
        
         this.sound.PausaJuego(this)
         this.playerController?.update(dt)
-    
+        
     }
 }
   

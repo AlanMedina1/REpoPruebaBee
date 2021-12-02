@@ -20,7 +20,7 @@ export default class UNRaf extends Phaser.Scene{
 
     create ()
     {
-
+        Events.emit('NoquieroMenu')
         Events.emit('Noquieroverelmenu')
         Events.emit('Noquieroverelmusica')
         Events.emit('Noquieroverelmenusonido')

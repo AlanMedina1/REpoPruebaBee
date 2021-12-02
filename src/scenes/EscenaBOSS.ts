@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 import PlayerController from './PlayerController'
 import ObstaclesController from './ObstaclesController'
-//import AvispaController from './AvispaController'
+import {sharedInstance as Events} from './EventCenter'
 
 export default class EscenaBOSS extends Phaser.Scene
 {
@@ -39,7 +39,7 @@ export default class EscenaBOSS extends Phaser.Scene
     this.load.image('health', 'assets/images/Gameplay Assets/power up/PU vida1.png')
     this.load.image('healthempty', 'assets/images/Gameplay Assets/power up/PU vidasin22.png')
     //Preloads de los colliders
-    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/collider rojo pesticida corto.png')
+    this.load.image('pesticorto', 'assets/images/Gameplay Assets/colliders/plataforma_abejita.png')
     //Obstaculos
     this.load.image('obstaculos', 'assets/images/Gameplay Assets/colliders/tilemap1 prueba.png')
     this.load.image('FlorBoss', 'assets/images/Gameplay Assets/colliders/girasol.png')
@@ -64,7 +64,7 @@ export default class EscenaBOSS extends Phaser.Scene
 
  create()
  {
-
+    Events.on('salir', ()=> this.scene.start('inicio'), this)
     
     this.scene.launch('ui')
 
