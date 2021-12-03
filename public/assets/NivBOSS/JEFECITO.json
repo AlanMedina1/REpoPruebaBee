@@ -266,25 +266,14 @@
                 }, 
                 {
                  "height":45.4545,
-                 "id":43,
-                 "name":"Pium",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":45.4545,
-                 "x":11.4848712121211,
-                 "y":223.666689393939
-                }, 
-                {
-                 "height":45.4545,
                  "id":47,
                  "name":"Pium",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":45.4545,
-                 "x":20.27275,
-                 "y":323.27275
+                 "x":-17.0605833333333,
+                 "y":253.939416666667
                 }, 
                 {
                  "height":45.4545,
@@ -404,8 +393,8 @@
                  "type":"",
                  "visible":true,
                  "width":45.4545,
-                 "x":-25.7575530303031,
-                 "y":495.454568181818
+                 "x":-37.7575530303031,
+                 "y":568.787901515151
                 }, 
                 {
                  "height":45.4545,
@@ -417,6 +406,17 @@
                  "width":45.4545,
                  "x":3004.54547727273,
                  "y":40.9091136363636
+                }, 
+                {
+                 "height":29.4545,
+                 "id":61,
+                 "name":"Pium",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":30.7878333333334,
+                 "x":-6.72725000000036,
+                 "y":413.27275
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -425,7 +425,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":60,
+ "nextobjectid":62,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.0",

@@ -31,7 +31,7 @@ const config: Phaser.Types.Core.GameConfig = {
     physics: {
         default: 'matter',
         matter: {
-            debug: false
+            debug: true
         }
     },
 	scene: [ UNRaf, EscenaMenu, Escena3, Game, Game2, Game3, EscenaBOSS, GameOver, UI, sonidogeneral, EscenaDYK, EscenaDYK2, EscenaDYK3, EscenaDYKBoss, EscenaWin, MenuScene]

@@ -41,11 +41,11 @@ export default class GameOver extends Phaser.Scene
 		let ui:any = this.scene.get("ui");
 
 
-		var help = this.add.image(800, 570, 'reintentar')
+		var help = this.add.image(800, 430, 'reintentar')
         help.setInteractive()
         help.on('pointerdown', () => {Events.emit('Quieroverelmenu') ,this.scene.start(ui.Escena)} );
 
-		var help = this.add.image(600, 550, 'casaico')
+		var help = this.add.image(800, 580, 'casaico')
         help.setInteractive()
         help.on('pointerdown', () => {this.scene.start('inicio') 
 		let sound: any = this.scene.get('SonidosGeneral')

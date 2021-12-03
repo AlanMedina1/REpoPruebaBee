@@ -66,7 +66,7 @@ export default class EscenaMenu extends Phaser.Scene{
         creds.on('pointerdown', () => {this.scene.start('creditos') 
         this.sound.SonidoClick()});
   
-        var help = this.add.image(800, 570, 'play')
+        var help = this.add.image(800, 550, 'play')
         help.setInteractive()
         .setScale(1)
         //CAMBIAR A GAME NORMAL
