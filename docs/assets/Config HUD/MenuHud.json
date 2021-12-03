@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "casa ico grande.png",
+	"frame": {"x":0,"y":0,"w":120,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":120},
+	"sourceSize": {"w":120,"h":120}
+},
+{
+	"filename": "casa_ico_grande_frame2.png",
+	"frame": {"x":120,"y":0,"w":120,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":120},
+	"sourceSize": {"w":120,"h":120}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "MenuHud.png",
+	"format": "RGBA8888",
+	"size": {"w":240,"h":120},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b7de0877093d777333e342cb3b176cec:db61fd6c939b0848515a8a834457557f:7be5b8f765eaa2e68299365b1547f866$"
+}
+}
